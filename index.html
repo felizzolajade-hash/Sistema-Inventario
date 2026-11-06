@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
   <meta name="theme-color" content="#f4f7fb">
   <title>Inventario de tienda</title>
   <link rel="stylesheet" href="styles.css">
@@ -96,5 +97,58 @@
     </section>
     <footer class="footer">Inventario de tienda <span aria-hidden="true">·</span> Administración sencilla</footer>
   </main>
+=======
+  <title>Inventario de tienda</title>
+</head>
+<body>
+  <h1>Sistema de inventario</h1>
+
+  <h2>Registro de clientes</h2>
+  <form id="cliente-form">
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text" required>
+    <br><br>
+
+    <label for="telefono">Teléfono:</label>
+    <input id="telefono" type="tel" required>
+    <br><br>
+
+    <label for="correo">Correo electrónico:</label>
+    <input id="correo" type="email" required>
+    <br><br>
+
+    <button type="submit">Registrar cliente</button>
+  </form>
+
+  <h2>Listado de clientes</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Correo electrónico</th>
+      </tr>
+    </thead>
+    <tbody id="clientes-lista"></tbody>
+  </table>
+
+  <h2>Listado de productos</h2>
+  <table border="1">
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+    </tr>
+    <tr>
+      <td>Computador</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Mouse</td>
+      <td>20</td>
+    </tr>
+  </table>
+
+  <script src="script.js" defer></script>
+>>>>>>> origin/yoreinys
 </body>
 </html>
