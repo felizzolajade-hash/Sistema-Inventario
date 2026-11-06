@@ -1,44 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>Inventario de Tienda</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario de tienda</title>
 </head>
 <body>
+  <h1>Sistema de inventario</h1>
 
-<h1>Sistema de Inventario</h1>
+  <h2>Registro de clientes</h2>
+  <form id="cliente-form">
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text" required>
+    <br><br>
 
-<h2>Registro de productos</h2>
+    <label for="telefono">Teléfono:</label>
+    <input id="telefono" type="tel" required>
+    <br><br>
 
-<label>Nombre del producto:</label>
-<input type="text">
+    <label for="correo">Correo electrónico:</label>
+    <input id="correo" type="email" required>
+    <br><br>
 
-<br><br>
+    <button type="submit">Registrar cliente</button>
+  </form>
 
-<label>Cantidad:</label>
-<input type="number">
+  <h2>Listado de clientes</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Correo electrónico</th>
+      </tr>
+    </thead>
+    <tbody id="clientes-lista"></tbody>
+  </table>
 
-<br><br>
+  <h2>Listado de productos</h2>
+  <table border="1">
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+    </tr>
+    <tr>
+      <td>Computador</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>Mouse</td>
+      <td>20</td>
+    </tr>
+  </table>
 
-<button>Registrar producto</button>
-
-<h2>Listado de productos</h2>
-
-<table border="1">
-<tr>
-<th>Producto</th>
-<th>Cantidad</th>
-</tr>
-
-<tr>
-<td>Computador</td>
-<td>10</td>
-</tr>
-
-<tr>
-<td>Mouse</td>
-<td>20</td>
-</tr>
-</table>
-
+  <script src="script.js" defer></script>
 </body>
 </html>
