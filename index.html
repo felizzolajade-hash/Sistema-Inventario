@@ -1,44 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>Inventario de Tienda</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f7fb">
+  <title>Inventario de tienda</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <main class="app">
+    <header class="page-header">
+      <div class="brand-mark" aria-hidden="true">I</div>
+      <div>
+        <p class="eyebrow">PANEL DE CONTROL</p>
+        <h1>Inventario de tienda</h1>
+        <p class="page-description">Registra y consulta los productos de tu inventario.</p>
+      </div>
+    </header>
 
-<h1>Sistema de Inventario</h1>
+    <section class="summary" aria-label="Resumen del inventario">
+      <article class="summary-card">
+        <span class="summary-icon" aria-hidden="true">#</span>
+        <div>
+          <p class="summary-label">Productos registrados</p>
+          <p class="summary-value" id="product-count">2</p>
+        </div>
+      </article>
+      <article class="summary-card">
+        <span class="summary-icon summary-icon--blue" aria-hidden="true">+</span>
+        <div>
+          <p class="summary-label">Unidades en inventario</p>
+          <p class="summary-value" id="unit-count">30</p>
+        </div>
+      </article>
+    </section>
 
-<h2>Registro de productos</h2>
+    <section class="panel registration-panel" aria-labelledby="registration-title">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">NUEVO REGISTRO</p>
+          <h2 id="registration-title">Agregar producto</h2>
+        </div>
+        <span class="step-badge" aria-hidden="true">01</span>
+      </div>
 
-<label>Nombre del producto:</label>
-<input type="text">
+      <form id="product-form">
+        <div class="form-fields">
+          <div class="field">
+            <label for="product-name">Nombre del producto</label>
+            <input id="product-name" name="productName" type="text" placeholder="Ej. Teclado inalámbrico" maxlength="80" autocomplete="off" required>
+          </div>
+          <div class="field field--quantity">
+            <label for="product-quantity">Cantidad</label>
+            <input id="product-quantity" name="quantity" type="number" placeholder="0" min="1" step="1" inputmode="numeric" required>
+          </div>
+          <button class="submit-button" type="submit">
+            <span aria-hidden="true">+</span>
+            Registrar producto
+          </button>
+        </div>
+      </form>
+      <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+    </section>
 
-<br><br>
+    <section class="panel inventory-panel" aria-labelledby="inventory-title">
+      <div class="panel-heading inventory-heading">
+        <div>
+          <p class="eyebrow">TU CATÁLOGO</p>
+          <h2 id="inventory-title">Listado de productos</h2>
+        </div>
+        <span class="list-count" id="list-count">2 productos</span>
+      </div>
 
-<label>Cantidad:</label>
-<input type="number">
-
-<br><br>
-
-<button>Registrar producto</button>
-
-<h2>Listado de productos</h2>
-
-<table border="1">
-<tr>
-<th>Producto</th>
-<th>Cantidad</th>
-</tr>
-
-<tr>
-<td>Computador</td>
-<td>10</td>
-</tr>
-
-<tr>
-<td>Mouse</td>
-<td>20</td>
-</tr>
-</table>
-
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col">Cantidad disponible</th>
+            </tr>
+          </thead>
+          <tbody id="product-list">
+            <tr>
+              <td class="product-cell"><span class="product-dot" aria-hidden="true"></span>Computador</td>
+              <td><span class="quantity-pill">10 unidades</span></td>
+            </tr>
+            <tr>
+              <td class="product-cell"><span class="product-dot product-dot--blue" aria-hidden="true"></span>Mouse</td>
+              <td><span class="quantity-pill">20 unidades</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="footer">Inventario de tienda <span aria-hidden="true">·</span> Administración sencilla</footer>
+  </main>
 </body>
 </html>
